@@ -11,6 +11,6 @@ pool:
 
 steps:
 - script: |
-    apt-get install elixir
+    sudo apt-get install elixir
     elixir -v
   displayName: 'Install elixir and check version.'
