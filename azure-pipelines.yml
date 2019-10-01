@@ -7,11 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'elixir-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: eelixir -v
+  displayName: 'Check elixir version'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
