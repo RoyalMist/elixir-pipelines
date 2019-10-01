@@ -17,3 +17,19 @@ steps:
     sudo apt-get install elixir
     elixir -v
   displayName: 'Install elixir and check version.'
+
+- script: |
+    sudo apt-get install nodejs
+    node -v
+    npm -v
+  displayName: 'Install nodejs and check version.'
+
+- script: |
+    mix deps.get
+    mix deps.compile
+    mix test
+  displayName: 'Compile elixir and run tests.'
+
+- script: |
+    cd assets && npm install
+  displayName: 'Compile frontend and run tests.'
