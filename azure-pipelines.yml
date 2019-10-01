@@ -11,6 +11,7 @@ steps:
     sudo apt-get install esl-erlang
     sudo apt-get install elixir
     mix local.hex --force
+    mix local.rebar --force
     elixir -v
   displayName: 'Install elixir and check version.'
 
