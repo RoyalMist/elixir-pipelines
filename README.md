@@ -1,8 +1,8 @@
-# WIAtt
+# wIAtt - Wiatt's Internal Audit Tracking Tool
 
 [![Build Status](https://dev.azure.com/wIAtt/wiatt_web/_apis/build/status/RoyalMist.wIAtt?branchName=master)](https://dev.azure.com/wIAtt/wiatt_web/_build/latest?definitionId=1&branchName=master)
 
-To start your wIAtt (dev):
+To start wIAtt for development:
 
 * Install dependencies with `mix deps.get`
 * Create and migrate your database with `mix ecto.setup`
