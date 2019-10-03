@@ -16,13 +16,14 @@ steps:
     mix local.hex --force
     mix local.rebar --force
     sudo apt-get install postgresql postgresql-contrib
-    sudo -u postgres createuser postgres
     sudo apt-get install nodejs
   displayName: 'Install elixir, postgresql and nodejs.'
 
 - script: |
+    set MIX_ENV=test
     mix deps.get
     mix deps.compile
+    mix ecto.setup
     mix test
   displayName: 'Compile elixir and run tests.'
 
