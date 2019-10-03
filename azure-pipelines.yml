@@ -17,7 +17,7 @@ steps:
     mix local.rebar --force
     sudo apt-get install postgresql postgresql-contrib
     sudo service postgresql start
-    psql -c "CREATE USER postgres WITH PASSWORD 'postgres' SUPERUSER;"
+    sudo -u postgres bash -c "psql -c \"CREATE USER postgres WITH PASSWORD 'postgres' SUPERUSER;\""
     sudo apt-get install nodejs
   displayName: 'Install elixir, postgresql and nodejs.'
 
