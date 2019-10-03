@@ -19,15 +19,15 @@ steps:
     sudo service postgresql start
     sudo -u postgres bash -c "psql -c \"ALTER USER postgres WITH PASSWORD 'postgres' SUPERUSER;\""
     sudo apt-get install nodejs
-  displayName: 'Install elixir, postgresql and nodejs.'
+  displayName: 'Setup'
 
 - script: |
     set MIX_ENV=test
     mix deps.get
     mix deps.compile
     mix test
-  displayName: 'Compile elixir and run tests.'
+  displayName: 'Backend'
 
 - script: |
     cd assets && npm install
-  displayName: 'Compile frontend and run tests.'
+  displayName: 'Frontend'
