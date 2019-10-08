@@ -15,7 +15,8 @@ config :wIAtt, WIAttWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5+OJNXK+YRrRA0yxgX2PNxjDndeoTXGC/jlHCoNVZj9NTajGz50olgqW6dEp5IXT",
   render_errors: [view: WIAttWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: WIAtt.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: WIAtt.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "SECRET_SALT"]
 
 # Configures Elixir's Logger
 config :logger, :console,

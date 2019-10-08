@@ -1,6 +1,8 @@
 defmodule WIAttWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :wIAtt
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", WIAttWeb.UserSocket,
     websocket: true,
     longpoll: false

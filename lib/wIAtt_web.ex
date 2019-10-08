@@ -20,10 +20,10 @@ defmodule WIAttWeb do
   def controller do
     quote do
       use Phoenix.Controller, namespace: WIAttWeb
-
       import Plug.Conn
       import WIAttWeb.Gettext
       alias WIAttWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView.Controller
     end
   end
 
@@ -33,15 +33,12 @@ defmodule WIAttWeb do
         root: "lib/wIAtt_web/templates",
         namespace: WIAttWeb
 
-      # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
-
-      # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
-
       import WIAttWeb.ErrorHelpers
       import WIAttWeb.Gettext
       alias WIAttWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView
     end
   end
 
@@ -50,6 +47,7 @@ defmodule WIAttWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
